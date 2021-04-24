@@ -1,0 +1,6 @@
+C:\Users\lenovo\source\repos\ClimaWS.Webclima\ClimaWS.Webclima\bin\ClimaWS.Webclima.dll.config
+C:\Users\lenovo\source\repos\ClimaWS.Webclima\ClimaWS.Webclima\bin\ClimaWS.Webclima.dll
+C:\Users\lenovo\source\repos\ClimaWS.Webclima\ClimaWS.Webclima\bin\ClimaWS.Webclima.pdb
+C:\Users\lenovo\source\repos\ClimaWS.Webclima\ClimaWS.Webclima\obj\Debug\ClimaWS.Webclima.dll
+C:\Users\lenovo\source\repos\ClimaWS.Webclima\ClimaWS.Webclima\obj\Debug\ClimaWS.Webclima.pdb
+C:\Users\lenovo\source\repos\ClimaWS.Webclima\ClimaWS.Webclima\obj\Debug\ClimaWS.Webclima.csprojAssemblyReference.cache

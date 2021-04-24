@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="InsertarClima">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="grados" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ciudad" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="estado" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="user" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertarClimaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InsertarClimaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizarClima">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IdClima" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="grados" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ciudad" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="estado" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizarClimaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ActualizarClimaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="strConsultaClima">
+        <s:complexType />
+      </s:element>
+      <s:element name="strConsultaClimaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strConsultaClimaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="dtConsultaClima">
+        <s:complexType />
+      </s:element>
+      <s:element name="dtConsultaClimaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dtConsultaClimaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminarClima">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IdClima" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminarClimaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EliminarClimaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="InsertarClimaSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertarClima" />
+  </wsdl:message>
+  <wsdl:message name="InsertarClimaSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertarClimaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarClimaSoapIn">
+    <wsdl:part name="parameters" element="tns:ActualizarClima" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarClimaSoapOut">
+    <wsdl:part name="parameters" element="tns:ActualizarClimaResponse" />
+  </wsdl:message>
+  <wsdl:message name="strConsultaClimaSoapIn">
+    <wsdl:part name="parameters" element="tns:strConsultaClima" />
+  </wsdl:message>
+  <wsdl:message name="strConsultaClimaSoapOut">
+    <wsdl:part name="parameters" element="tns:strConsultaClimaResponse" />
+  </wsdl:message>
+  <wsdl:message name="dtConsultaClimaSoapIn">
+    <wsdl:part name="parameters" element="tns:dtConsultaClima" />
+  </wsdl:message>
+  <wsdl:message name="dtConsultaClimaSoapOut">
+    <wsdl:part name="parameters" element="tns:dtConsultaClimaResponse" />
+  </wsdl:message>
+  <wsdl:message name="EliminarClimaSoapIn">
+    <wsdl:part name="parameters" element="tns:EliminarClima" />
+  </wsdl:message>
+  <wsdl:message name="EliminarClimaSoapOut">
+    <wsdl:part name="parameters" element="tns:EliminarClimaResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WSClimaSoap">
+    <wsdl:operation name="InsertarClima">
+      <wsdl:input message="tns:InsertarClimaSoapIn" />
+      <wsdl:output message="tns:InsertarClimaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarClima">
+      <wsdl:input message="tns:ActualizarClimaSoapIn" />
+      <wsdl:output message="tns:ActualizarClimaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="strConsultaClima">
+      <wsdl:input message="tns:strConsultaClimaSoapIn" />
+      <wsdl:output message="tns:strConsultaClimaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="dtConsultaClima">
+      <wsdl:input message="tns:dtConsultaClimaSoapIn" />
+      <wsdl:output message="tns:dtConsultaClimaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarClima">
+      <wsdl:input message="tns:EliminarClimaSoapIn" />
+      <wsdl:output message="tns:EliminarClimaSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSClimaSoap" type="tns:WSClimaSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="InsertarClima">
+      <soap:operation soapAction="http://tempuri.org/InsertarClima" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarClima">
+      <soap:operation soapAction="http://tempuri.org/ActualizarClima" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="strConsultaClima">
+      <soap:operation soapAction="http://tempuri.org/strConsultaClima" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dtConsultaClima">
+      <soap:operation soapAction="http://tempuri.org/dtConsultaClima" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarClima">
+      <soap:operation soapAction="http://tempuri.org/EliminarClima" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WSClimaSoap12" type="tns:WSClimaSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="InsertarClima">
+      <soap12:operation soapAction="http://tempuri.org/InsertarClima" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarClima">
+      <soap12:operation soapAction="http://tempuri.org/ActualizarClima" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="strConsultaClima">
+      <soap12:operation soapAction="http://tempuri.org/strConsultaClima" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dtConsultaClima">
+      <soap12:operation soapAction="http://tempuri.org/dtConsultaClima" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarClima">
+      <soap12:operation soapAction="http://tempuri.org/EliminarClima" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WSClima">
+    <wsdl:port name="WSClimaSoap" binding="tns:WSClimaSoap">
+      <soap:address location="https://localhost:44386/WSClima.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WSClimaSoap12" binding="tns:WSClimaSoap12">
+      <soap12:address location="https://localhost:44386/WSClima.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

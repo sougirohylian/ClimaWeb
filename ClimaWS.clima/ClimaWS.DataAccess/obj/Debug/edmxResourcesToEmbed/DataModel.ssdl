@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ClimaWebAppModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2006/04/edm/ssdl">
+  <EntityType Name="Clima">
+    <Key>
+      <PropertyRef Name="IdClima" />
+    </Key>
+    <Property Name="IdClima" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="grados" Type="nchar" MaxLength="10" />
+    <Property Name="IdCiudad" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="IdEstado" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="FechaCreacion" Type="datetime" Nullable="false" />
+    <Property Name="UsuarioCreacion" Type="nvarchar" MaxLength="400" />
+  </EntityType>
+  <EntityType Name="EstadoClima">
+    <Key>
+      <PropertyRef Name="IdEstado" />
+    </Key>
+    <Property Name="IdEstado" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" MaxLength="400" />
+    <Property Name="FechaCreacion" Type="datetime" />
+    <Property Name="UsuarioCreacion" Type="nvarchar" MaxLength="400" />
+  </EntityType>
+  <EntityType Name="Roles">
+    <Key>
+      <PropertyRef Name="IdRol" />
+    </Key>
+    <Property Name="IdRol" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" MaxLength="400" />
+    <Property Name="Descripcion" Type="nvarchar" MaxLength="800" />
+    <Property Name="FechaCreacion" Type="datetime" />
+    <Property Name="UsuarioCreacion" Type="nvarchar" MaxLength="400" />
+  </EntityType>
+  <EntityType Name="Usuarios">
+    <Key>
+      <PropertyRef Name="IdUsuario" />
+    </Key>
+    <Property Name="IdUsuario" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Usuario" Type="nvarchar" MaxLength="400" />
+    <Property Name="Password" Type="nvarchar(max)" />
+    <Property Name="IdRol" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="FechaCreacion" Type="datetime" />
+    <Property Name="Estado" Type="bit" />
+    <Property Name="Login" Type="bit" />
+  </EntityType>
+  <EntityType Name="Ciudades">
+    <Key>
+      <PropertyRef Name="IdPais" />
+    </Key>
+    <Property Name="IdPais" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="IdDepartamento" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="Nombre" Type="nvarchar" MaxLength="500" />
+    <Property Name="FechaCreacion" Type="datetime" />
+    <Property Name="UsuarioCreacion" Type="nvarchar" MaxLength="400" />
+  </EntityType>
+  <EntityType Name="Departamentos">
+    <Key>
+      <PropertyRef Name="IdDepartamento" />
+    </Key>
+    <Property Name="IdDepartamento" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdPais" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="Nombre" Type="nvarchar" MaxLength="500" />
+    <Property Name="FechaCreacion" Type="datetime" />
+    <Property Name="UsuarioCreacion" Type="nvarchar" MaxLength="400" />
+  </EntityType>
+  <EntityType Name="Pais">
+    <Key>
+      <PropertyRef Name="IdPais" />
+    </Key>
+    <Property Name="IdPais" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" MaxLength="500" />
+    <Property Name="UsuarioCreacion" Type="nvarchar" MaxLength="400" />
+    <Property Name="FechaCreacion" Type="datetime" />
+  </EntityType>
+  <EntityContainer Name="ClimaWebAppModelStoreContainer">
+    <EntitySet Name="Clima" EntityType="Self.Clima" Schema="clima" store:Type="Tables" />
+    <EntitySet Name="EstadoClima" EntityType="Self.EstadoClima" Schema="clima" store:Type="Tables" />
+    <EntitySet Name="Roles" EntityType="Self.Roles" Schema="seguridad" store:Type="Tables" />
+    <EntitySet Name="Usuarios" EntityType="Self.Usuarios" Schema="seguridad" store:Type="Tables" />
+    <EntitySet Name="Ciudades" EntityType="Self.Ciudades" Schema="ubicacion" store:Type="Tables" />
+    <EntitySet Name="Departamentos" EntityType="Self.Departamentos" Schema="ubicacion" store:Type="Tables" />
+    <EntitySet Name="Pais" EntityType="Self.Pais" Schema="ubicacion" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

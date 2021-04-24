@@ -1,0 +1,6 @@
+C:\Users\lenovo\source\repos\ClimaWS.clima\ClimaWS.DataAccess\bin\Debug\ClimaWS.DataAccess.dll.config
+C:\Users\lenovo\source\repos\ClimaWS.clima\ClimaWS.DataAccess\bin\Debug\ClimaWS.DataAccess.dll
+C:\Users\lenovo\source\repos\ClimaWS.clima\ClimaWS.DataAccess\bin\Debug\ClimaWS.DataAccess.pdb
+C:\Users\lenovo\source\repos\ClimaWS.clima\ClimaWS.DataAccess\obj\Debug\ClimaWS.DataAccess.csprojAssemblyReference.cache
+C:\Users\lenovo\source\repos\ClimaWS.clima\ClimaWS.DataAccess\obj\Debug\ClimaWS.DataAccess.dll
+C:\Users\lenovo\source\repos\ClimaWS.clima\ClimaWS.DataAccess\obj\Debug\ClimaWS.DataAccess.pdb
